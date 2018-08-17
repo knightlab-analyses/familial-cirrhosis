@@ -1,0 +1,89 @@
+Logging started at 22:04:42 on 18 Jul 2018
+QIIME version: 1.9.1
+
+qiime_config values:
+pick_otus_reference_seqs_fp	/Users/priya/miniconda3/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+sc_queue	all.q
+pynast_template_alignment_fp	/Users/priya/miniconda3/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set_aligned/85_otus.pynast.fasta
+cluster_jobs_fp	start_parallel_jobs.py
+assign_taxonomy_reference_seqs_fp	/Users/priya/miniconda3/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/rep_set/97_otus.fasta
+torque_queue	friendlyq
+jobs_to_start	1
+denoiser_min_per_core	50
+assign_taxonomy_id_to_taxonomy_fp	/Users/priya/miniconda3/envs/qiime1/lib/python2.7/site-packages/qiime_default_reference/gg_13_8_otus/taxonomy/97_otu_taxonomy.txt
+temp_dir	/var/folders/fw/pzn9lrmx18bc96z02lr_hvgw0000gp/T/
+blastall_fp	blastall
+seconds_to_sleep	1
+
+parameter file values:
+parallel:jobs_to_start	1
+
+Input file md5 sums:
+/Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/reference-hit9k-wtax.biom: 5abaace821a3ba71c0893c2d058fd74f
+/Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/all_qiime_mapping_complete_corr.txt: fb240d8267663d2bad1fb5ba766775a8
+/Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/insertion_tree.relabelled.tre: 11575448a227efa4abfd1354172d4ee0
+
+Executing commands.
+
+# Beta Diversity (weighted_unifrac) command 
+beta_diversity.py -i /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/reference-hit9k-wtax.biom -o /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k --metrics weighted_unifrac  -t /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/insertion_tree.relabelled.tre 
+
+Stdout:
+
+Stderr:
+
+# Rename distance matrix (weighted_unifrac) command 
+mv /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/weighted_unifrac_reference-hit9k-wtax.txt /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/weighted_unifrac_dm.txt
+
+Stdout:
+
+Stderr:
+
+# Principal coordinates (weighted_unifrac) command 
+principal_coordinates.py -i /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/weighted_unifrac_dm.txt -o /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/weighted_unifrac_pc.txt 
+
+Stdout:
+
+Stderr:
+/Users/priya/miniconda3/envs/qiime1/lib/python2.7/site-packages/skbio/stats/ordination/_principal_coordinate_analysis.py:107: RuntimeWarning: The result contains negative eigenvalues. Please compare their magnitude with the magnitude of some of the largest positive eigenvalues. If the negative ones are smaller, it's probably safe to ignore them, but if they are large in magnitude, the results won't be useful. See the Notes section for more details. The smallest eigenvalue is -0.442163044556 and the largest is 15.2433572271.
+  RuntimeWarning
+
+# Make emperor plots, weighted_unifrac) command 
+make_emperor.py -i /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/weighted_unifrac_pc.txt -o /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/weighted_unifrac_emperor_pcoa_plot/ -m /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/all_qiime_mapping_complete_corr.txt 
+
+Stdout:
+
+Stderr:
+
+# Beta Diversity (unweighted_unifrac) command 
+beta_diversity.py -i /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/reference-hit9k-wtax.biom -o /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k --metrics unweighted_unifrac  -t /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/insertion_tree.relabelled.tre 
+
+Stdout:
+
+Stderr:
+
+# Rename distance matrix (unweighted_unifrac) command 
+mv /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/unweighted_unifrac_reference-hit9k-wtax.txt /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/unweighted_unifrac_dm.txt
+
+Stdout:
+
+Stderr:
+
+# Principal coordinates (unweighted_unifrac) command 
+principal_coordinates.py -i /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/unweighted_unifrac_dm.txt -o /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/unweighted_unifrac_pc.txt 
+
+Stdout:
+
+Stderr:
+/Users/priya/miniconda3/envs/qiime1/lib/python2.7/site-packages/skbio/stats/ordination/_principal_coordinate_analysis.py:107: RuntimeWarning: The result contains negative eigenvalues. Please compare their magnitude with the magnitude of some of the largest positive eigenvalues. If the negative ones are smaller, it's probably safe to ignore them, but if they are large in magnitude, the results won't be useful. See the Notes section for more details. The smallest eigenvalue is -0.0120991993174 and the largest is 5.33778984079.
+  RuntimeWarning
+
+# Make emperor plots, unweighted_unifrac) command 
+make_emperor.py -i /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/unweighted_unifrac_pc.txt -o /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/bdiv9k/unweighted_unifrac_emperor_pcoa_plot/ -m /Users/priya/Desktop/kd-research/loomba/all16S_updated_052518/all_qiime_mapping_complete_corr.txt 
+
+Stdout:
+
+Stderr:
+
+
+Logging stopped at 22:06:18 on 18 Jul 2018
