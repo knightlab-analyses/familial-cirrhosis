@@ -1,3 +1,6 @@
 # familial-cirrhosis
 
+This repository contains notebooks used to perform analysis for [Caussy & Tripathi et al., 2019](https://www.nature.com/articles/s41467-019-09455-9)
+
+ABSTRACT
 The presence of cirrhosis in nonalcoholic-fatty-liver-disease (NAFLD) is the most important predictor of liver-related mortality. Limited data exist concerning the diagnostic accuracy of gut-microbiome-derived signatures for detecting NAFLD-cirrhosis. We characterized by16S rRNA amplicon sequencing gut-microbiome compositions of 203 uniquely well-characterized participants from a prospective twin and family cohort, including 98 probands encompassing the entire spectrum of NAFLD and their first-degree relatives (n=105), assessed by advanced magnetic-resonance-imaging (MRI). We observed strong familial correlation of gut-microbiome profiles, driven by shared housing. We identified a panel of 30 features, including 27 bacterial features, which were used to build a Random Forest classifier for detecting NAFLD-cirrhosis.  In a derivation cohort of probands, the model had a robust diagnostic accuracy (AUROC of 0.92) for detecting NAFLD-cirrhosis, confirmed in a validation cohort of relatives of proband with NAFLD-cirrhosis (AUROC of 0.87). This study provides novel evidence for a novel fecal-microbiome-derived signature to detect NAFLD-cirrhosis.
